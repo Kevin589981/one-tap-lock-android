@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">一键锁屏</string>
+    <string name="admin_description">仅用于点击图标后立即锁屏。</string>
+    <string name="admin_explanation">请启用“锁定屏幕”权限。启用后，点击“一键锁屏”图标即可立即息屏；应用不会常驻后台。</string>
+    <string name="admin_unavailable">无法打开设备管理权限设置。</string>
+    <string name="lock_failed">锁屏失败，请检查设备管理权限。</string>
+</resources>
