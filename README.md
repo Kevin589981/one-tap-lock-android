@@ -14,12 +14,12 @@
 
 ## 构建
 
-仓库推送到 `main` 后由 GitHub Actions 构建，无需在电脑上安装 Android 构建环境。工作流使用 JDK 17、Android SDK 35、Android Gradle Plugin 9.0.1 和 Gradle 9.2.1。构建结果可从 Actions 的 `one-tap-lock-apk` artifact 下载。
+仓库推送到 `main` 后由 GitHub Actions 构建签名正式版，无需在电脑上安装 Android 构建环境。工作流使用 JDK 17、Android SDK 35、Android Gradle Plugin 9.0.1 和 Gradle 9.2.1。构建结果可从 Actions 的 `one-tap-lock-apk` artifact 下载。仓库的 Actions Secrets 中需要 `SIGNING_KEYSTORE_BASE64`（密钥库文件的 Base64 内容）和 `SIGNING_PASSWORD`；密钥库文件本身不得提交到公开仓库。
 
-若已有本地环境，也可以运行：
+若已有本地环境、签名密钥和对应环境变量，也可以运行：
 
 ```sh
-gradle assembleDebug
+gradle assembleRelease
 ```
 
-生成的可安装 APK 位于 `app/build/outputs/apk/debug/app-debug.apk`。工程只使用 Android 平台 API，没有第三方运行时依赖。
+生成的可安装 APK 位于 `app/build/outputs/apk/release/app-release.apk`。工程只使用 Android 平台 API，没有第三方运行时依赖。

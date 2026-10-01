@@ -14,11 +14,21 @@ android {
         versionName '1.0.0'
     }
 
+    signingConfigs {
+        release {
+            storeFile file(System.getenv('SIGNING_KEYSTORE_PATH') ?: 'missing-release-keystore')
+            storePassword System.getenv('SIGNING_PASSWORD')
+            keyAlias 'one-tap-lock'
+            keyPassword System.getenv('SIGNING_PASSWORD')
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+            signingConfig signingConfigs.release
         }
     }
 
